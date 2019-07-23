@@ -1,0 +1,124 @@
+What is the Next Step for IETF YANG?
+
+IETF Side Meeting
+IETF-105, Montreal, Canada
+Tuesday 23 July
+8.30am
+
+Note Well applies covering IPR etc.
+
+Session Chaired by GengLiang
+Minutes: Adrian Farrel and Daniel King
+
+Slides are available through a link to github on the Side Meeting wiki page
+https://github.com/sunseawq/IETF-YANG-side-meeting/
+
+Agenda 
+
+1. YANG Model Status Update, Problem statement. (GengLiang 10 minutes)
+2. What have already been done for IETF YANG. (Qin Wu 20 minutes)
+ o YANG Catalog Project Update in IETF
+ o YANG Data model Interconnection Framework Development in IETF
+ o Telefonica SDN Architecture and Model Usage
+ o China YANG Round Table meeting Update (Reach out to China Operator Community)
+3. Open Discussion Questions (30 minutes)
+
+- There was one change to the published Agenda, a late submission from Telefonica 
+
+1. YANG Model Status Update, Problem statement. (GengLiang 10 minutes)
+Geng Liang introduces the meeting and the questions to be considered.
+Geng Liang presents an overview of where we are so far and what the gap is. We will return to the list after the presentations. 
+
+2. What have already been done for IETF YANG. (Qin Wu 20 minutes)
+Qin Wu presenting what is being done to address the gap
+
+Comments during this section: 
+
+Douglas Hurler - What is the pain point? Interop, or people will not use models not built in IETF?
+Qin - Explains why separate device and service model approaches (bottom up versus top down). Implies need for a translation mechanism
+Douglas - So this is a fundamental YANG model issue, not just missing augmentations?
+Qin - Yes. It may mean we need a framework.
+
+Telefonica presentation (Luis presents on behalf of Oscar) which was a late addition
+Luis from Telefonica (and on behalf of Oscar) discussing their planned SDN architecture
+
+
+Acee - highlighting the different models used in the architecture, both service and device. 
+
+Robin Li - Is this Telefonica research, products, or open source
+Luis - We can't do much development ourselves, so rely on industrial products and open source via an innovator. Requirement for
+
+Charles Eckel - TAPI from ONF and also YANG for northbound. Where do ONF and YANG fit in
+Luis - ONF northbound of controller. Some gluing is needed
+
+Xuifeng - This architecture is comprehensive. You seem to use lots of alternatives to IETF YANG models and not use the IETF much
+Luis - We are taking the mature models
+
+Sonum Mathur - For SBI you using Netconf an GNMI. Why? Was it challenging?
+Luis - Need to defer to Oscar and we will take this offline
+Xuifeng - Understandable because GNMI supports telemetry and YANG push wasn't ready
+
+
+= Open Discussion
+
+Geng Liang summarises questions highlighted at the start of the session.
+
+Acee Lindem - We were struggling with "one size fits all", but then invented schema mount.
+We do a lot of model writing, but it is like compiling code but never running it
+
+Ignas Bogdonas - One question not asked "Why is open config accepted in the industry but IETF models are not?"
+The IETF not good at working on systems, but this is what we need in this case.
+Need a "release" of components that work together
+E.g. Connect A to B, there are many layers which might have individual models. Question is whether those models match together.
+E.g. PW model makes assumptions that are incompatible with other models
+What is need is a move away from developing individual models and to develop systems
+If we talk to Ops community they still ask "why should we use YANG? what are the benefits? how to integrate with existing tools?"
+Not a technical problem, more of a coordination problem
+
+Geng - IETF is typically bottom up. Hence IETF YANG models are considered as not systematic
+Can we do anything in the IETF? Can we make a DT of operators to take systematic approach?
+
+Ignas - IETF must (not should) do something
+1. Education: we explain how we think this should work
+2. Models for everything: IETF assumes all manageability can be solved with models, but needs component in between for technical and policy-deployment reasons
+3. Try to understand how operators us components to build services
+4. Shoot for 80% not 100% and get something shipped
+E.g. BGP router ID does not need to be in a YANG model, it is configured just once. BGP policy needs to be configured very often. We should focus on the things that need frequent config.
+
+Henk - YANG push DT had a side product. Everyone knew telemetry was coming
+There is an I-D "Generalise network control automation YANG model" - https://tools.ietf.org/html/draft-bryskin-netconf-automation-yang - by Igor Bryskin
+There is a simple event/action condition concept in this framework, and this may be useful in this context
+It could be a building block and help with some of issues identified today. 
+
+Qin Wu - Similar model has been proposed in netmod to address the gap. Take offline.
+Qin Wu - Problem is the mess of the southbound device model
+
+Geng - Instead of focus on test and field trial, operators can provide lab environment
+
+Rob Wilton - not sure IETF is right place for service level YANG models
+Maybe MEF is a better place
+Charles - not sure. MEF didn't have the YANG expertise. But IETF may not have the right ops people. Need to work together
+Mahesh - Did do some models in MEF for eLAN etc. Doing some SDWAN modeling (but not in YANG). Have not got traction in industry
+Rob - need service models to sit together with device models. But cannot standarise mapping - there is a need for secret source in the operator
+IETF YANG not getting traction because of "cost". Huge cost to adding YANG to existing management systems
+
+Robin Li
+1. IETF good at components, and operators OK with these components
+2. IETF could be good at architecture - We have IAB and we must set up architecture view
+Perhaps use hackathon or opens source to show how this can all work
+Coordination with operational community is important, but maybe this is not IETF work. But IETF should do educational work
+
+Ignas
+Green/brown field. Dominant model is CLI templates. i.e., Ops community is defining a modeling language that is not standard, but delivers. Hence discussion is more about this than about YANG
+Operators don't come to IETF. Period. Hence IETF must outreach
+
+Xuifeng - OpenConfig is not compatible with IETF. Need to do something!
+
+Qin. We don't want to standardise mapping. That is secret juice, but we can define different level model.
+
+Luis for Oscar - "OpenConfig is for responsive to changes and is more mature"
+
+Geng summarises the discussion from today and will set up email list
+
+
+
